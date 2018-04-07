@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    tools:context="com.karla00058615.acercade.MainActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_1"
+        android:layout_width="176dp"
+        android:layout_height="176dp"
+        android:src="@mipmap/foto1"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp"/>
+
+
+    <TextView
+        android:id="@+id/text_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_1"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/image_1"
+        android:layout_marginTop="32dp"
+        android:textColor="#000"/>
+
+    <TextView
+        android:id="@+id/text_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ing. Informatica"
+        android:layout_centerHorizontal="true"
+        android:textColor="#000"
+        android:layout_below="@+id/text_1"
+        android:layout_margin="8dp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_2"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@mipmap/foto2"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/text_2"/>
+
+    <TextView
+        android:id="@+id/text_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KarlaLopez96"
+        android:layout_below="@+id/text_2"
+        android:layout_toRightOf="@+id/image_2"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="#000" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_3"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@mipmap/foto4"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/image_2"/>
+
+    <TextView
+        android:id="@+id/text_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00058615\n@uca.edu.sv"
+        android:layout_below="@+id/text_3"
+        android:layout_toRightOf="@+id/image_3"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="#000" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_4"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@mipmap/foto3"
+        android:layout_marginTop="32dp"
+        android:layout_toRightOf="@+id/text_3"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@id/text_2"/>
+
+    <TextView
+        android:id="@+id/text_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Karla López/Facebook"
+        android:layout_below="@+id/text_2"
+        android:layout_toRightOf="@+id/image_4"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="#000" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_5"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@mipmap/foto5"
+        android:layout_marginTop="32dp"
+        android:layout_toRightOf="@+id/text_4"
+        android:layout_marginLeft="48dp"
+        android:layout_below="@id/text_5"/>
+
+    <TextView
+        android:id="@+id/text_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cel: 73459867"
+        android:layout_below="@+id/text_5"
+        android:layout_toRightOf="@+id/image_5"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="#000" />
+
+    <TextView
+        android:id="@+id/text_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Powered By Karla López"
+        android:layout_below="@id/text_6"
+        android:layout_toRightOf="@id/image_3"
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="80dp" />
+</RelativeLayout>
