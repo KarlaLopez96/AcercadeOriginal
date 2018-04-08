@@ -1,11 +1,15 @@
 package com.karla00058615.acercade;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
+import java.io.FileOutputStream;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,20 +17,31 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
-        Button bt = (Button)findViewById(R.id.buttonShare);
-        bt.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent myIntent = new Intent(Intent.ACTION_SEND);
-                myIntent.setType("text/plane");
-                String shareBody = "Karla Esperanza López \nIng.Informatica\nGitHubKarlaLopez96\nFacebook:Karla Lopez" +
-                        "\nCorreo:0005861@uca.edu.sv \n Cel:73459867";
-                String shareSub = "Your subject here";
-                myIntent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
-                myIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
-                startActivity(Intent.createChooser(myIntent,"Share using"));
-            }
-        });
+    public void OnClickShare(View view){
+
+        BitmapDrawable drawable = (BitmapDrawable)getBaseContext().getResources().getDrawable(R.drawable.foto1);
+        Bitmap bitmap = drawable.getBitmap();
+        try {
+            File file = new File(this.getExternalCacheDir(),"foto1.jpg");
+            FileOutputStream fOut = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
+            fOut.flush();
+            fOut.close();
+            file.setReadable(true, false);
+            final Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+            intent.putExtra(Intent.EXTRA_TEXT, "Karla Esperanza López\n" +
+                    "gitHub:KarlaLopez96\n" +
+                    "Facebook:Karla López\n" +
+                    "Gmail:00058615@uca.edu.sv\n" +
+                    "Cel:73459867");
+            intent.setType("*/*");
+            startActivity(Intent.createChooser(intent, "Share image via"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
