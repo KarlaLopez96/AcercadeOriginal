@@ -118,6 +118,16 @@
         android:layout_marginLeft="8dp"
         android:textColor="#000" />
 
+    <Button
+        android:id="@+id/buttonShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        android:onClick="share"
+        android:layout_below="@id/text_6"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="24dp"/>
+
     <TextView
         android:id="@+id/text_7"
         android:layout_width="wrap_content"
